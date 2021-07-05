@@ -82,7 +82,7 @@ RUN apt-get update && apt-get install -y libxerces-c-dev libxmu-dev libxi-dev fr
 COPY --from=build-geant4 /opt/geant4 /opt/geant4
 RUN curl -sL https://deb.nodesource.com/setup_12.x | bash - && apt-get -y install nodejs \
 	&& pip3 install ipympl && apt-get -y install python3-setuptools python3-wheel \
-	&& pip3 install numba itkwidgets trimesh pyvista panel && conda install -c conda-forge meshplot \
+	&& pip3 install numba itkwidgets trimesh pyvista panel virtualenvwrapper && conda install -c conda-forge meshplot \
 	&& pip3 install jupyterlab --upgrade && jupyter labextension install @jupyter-widgets/jupyterlab-manager \
 	&& jupyter labextension install jupyter-matplotlib && jupyter nbextension enable --py widgetsnbextension \
 	&& jupyter labextension install jupyterlab-datawidgets itkwidgets @arbennett/base16-nord
